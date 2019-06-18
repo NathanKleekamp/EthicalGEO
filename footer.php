@@ -13,6 +13,10 @@
 
 	</div><!-- #content -->
 
+  <?php if ( is_active_sidebar( 'call-to-action' ) ) : ?>
+    <?php dynamic_sidebar( 'call-to-action' ); ?>
+  <?php endif; ?>
+
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
       <img class="logo-ags" src="https://via.placeholder.com/150" alt="American Geographical Society logo">

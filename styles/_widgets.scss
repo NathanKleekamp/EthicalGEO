@@ -6,3 +6,11 @@
 .widget select {
 	max-width: 100%;
 }
+
+.cta {
+  background-color: $cta-bg-color;
+  color: $secondary-text-color;
+  font-size: 1.5em;
+  padding: 0.5em;
+  text-align: center;
+}

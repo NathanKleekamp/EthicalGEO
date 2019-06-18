@@ -116,6 +116,22 @@ function ethical_geo_widgets_init() {
 }
 add_action( 'widgets_init', 'ethical_geo_widgets_init' );
 
+function ethical_geo_call_to_action_init() {
+  register_sidebar( array(
+    'name' => esc_html__('Call to Action', 'ethical_geo'),
+    'id' => 'call-to-action',
+    'description' => esc_html__('Add text widget here.', 'ethical_geo'),
+    'before_widget' => '<div class="cta">',
+    'after_widget' => '</div>',
+  ) );
+}
+add_action( 'widgets_init', 'ethical_geo_call_to_action_init' );
+
+function ethical_geo_hide_widget_title($param) {
+  return null;
+}
+add_filter('widget_title','ethical_geo_hide_widget_title');
+
 /**
  * Enqueue scripts and styles.
  */

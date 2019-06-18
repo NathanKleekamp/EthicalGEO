@@ -40,12 +40,18 @@
 			$ethical_geo_description = get_bloginfo( 'description', 'display' );
 			if ( $ethical_geo_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $ethical_geo_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
+		<button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+      <span class="menu-toggle-text">
+        <?php esc_html_e( 'Primary Menu', 'ethical_geo' ); ?>
+      </span>
+      <span class="menu-toggle-icon" aria-hidden="true">
+        &equiv;
+      </span>
+    </button>
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ethical_geo' ); ?></button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',

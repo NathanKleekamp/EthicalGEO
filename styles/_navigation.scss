@@ -2,84 +2,114 @@
 # Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
-}
+  color: royalblue;
 
-a:visited {
-	color: purple;
-}
+  &:visited {
+    color: purple;
+  }
 
-a:hover, a:focus, a:active {
-	color: midnightblue;
-}
+  &:hover,
+  &:active {
+    color: midnightblue;
+  }
 
-a:focus {
-	outline: thin dotted;
-}
+  &:focus {
+    color: midnightblue;
+    outline: thin dotted;
+  }
 
-a:hover, a:active {
-	outline: 0;
+  &:hover,
+  &:active {
+    outline: 0;
+  }
 }
 
 /*--------------------------------------------------------------
 # Menus
 --------------------------------------------------------------*/
+
+$header-height: 60px;
+
+.site-header {
+  align-content: center;
+  align-items: center;
+  background-color: $header-footer-bg-color;
+  border-bottom: $header-footer-border;
+  display: flex;
+  justify-content: space-between;
+  height: $header-height;
+  padding: 0 1em;
+}
+
+.site-branding {
+  margin-right: auto;
+}
+
+.site-title {
+  margin: 0;
+}
+
 .main-navigation {
-	clear: both;
+  background-color: $header-footer-bg-color;
 	display: block;
-	float: left;
-	width: 100%;
-}
+  left: -9999px;
+  position: absolute;
+  top: $header-height;
 
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-}
+  a {
+    border-bottom: 1px solid #ffffff;
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
+    &:link,
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $secondary-text-color;
+    }
+  }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
+  > li:last-child a {
+    border: 0;
+  }
 
-.main-navigation ul ul a {
-	width: 200px;
-}
+  &.toggled {
+    box-shadow: 0px 0px 15px -3px darken($header-footer-bg-color, 5);
+    left: 0;
+    width: 100%;
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
+    ul {
+      display: block;
+    }
+  }
 
-.main-navigation li {
-	float: left;
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
+  .sub-menu a {
+    padding-left: 2em;
+  }
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+
+.menu-toggle {
+  background-color: $header-footer-bg-color;
+  border: 0;
+  color: $secondary-text-color;
+  display: block;
+  font-size: 40px;
+  padding: 0;
+
+  .menu-toggle-text {
+    @extend %visuallyhidden;
+  }
 }
 
 @media screen and (min-width: 37.5em) {

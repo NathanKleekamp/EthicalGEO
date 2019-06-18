@@ -8,9 +8,10 @@
 }
 
 .cta {
-  background-color: $cta-bg-color;
+  background-image: linear-gradient(to bottom, $cta-bg-color, $cta-bg-color),
+                    url('assets/dots-tile.jpg');
   color: $secondary-text-color;
   font-size: 1.5em;
-  padding: 0.5em;
+  padding: 1em 0.5em;
   text-align: center;
 }

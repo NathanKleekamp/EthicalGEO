@@ -14,7 +14,11 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info"></div><!-- .site-info -->
+		<div class="site-info">
+      <img class="logo-ags" src="https://via.placeholder.com/150" alt="American Geographical Society logo">
+      <div class="social-media-wrapper"></div>
+      <p>&copy;&nbsp;EthicalGEO. All Rights Reserved.</p>
+    </div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

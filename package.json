@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "rm style.css && npm run sass",
-    "sass": "node-sass --output-style compressed style.scss > style.css"
+    "sass": "node-sass --output-style compressed style.scss > style.css",
+    "watch:sass": "nodemon -e scss -x 'npm run sass'"
   },
   "author": "Nathan Kleekamp",
   "license": "GPLv2 (or later)",
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1"
   }
 }

@@ -120,12 +120,10 @@ add_action( 'widgets_init', 'ethical_geo_widgets_init' );
  * Enqueue scripts and styles.
  */
 function ethical_geo_scripts() {
+	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap' );
 	wp_enqueue_style( 'ethical_geo-style', get_stylesheet_uri() );
-
 	wp_enqueue_script( 'ethical_geo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'ethical_geo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

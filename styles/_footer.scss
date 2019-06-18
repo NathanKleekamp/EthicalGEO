@@ -1,7 +1,7 @@
 .site-footer {
   background-color: $header-footer-bg-color;
   border-top: $header-footer-border;
-  padding: 75px 0;
+  padding: 50px 0;
 }
 
 .site-info {
@@ -9,6 +9,14 @@
   color: #ffffff;
   display: flex;
   flex-direction: column;
+
+  .ags-logo {
+    background: url('assets/ags-logo-white-400x400.png') no-repeat center center;
+    background-size: 150px 150px;
+    display: block;
+    width: 150px;
+    height: 150px;
+  }
 }
 
 .site-info .social-media-wrapper {

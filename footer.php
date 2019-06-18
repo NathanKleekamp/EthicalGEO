@@ -23,6 +23,7 @@
       <div class="social-media-wrapper"></div>
       <p>&copy;&nbsp;EthicalGEO. All Rights Reserved.</p>
     </div><!-- .site-info -->
+    <div class="bg-map"></div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

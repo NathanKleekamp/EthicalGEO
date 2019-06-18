@@ -1,0 +1,15 @@
+{
+  "name": "ethical_geo",
+  "version": "1.0.0",
+  "description": "The EthicalGEO Wordpress theme",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm style.css && npm run sass",
+    "sass": "node-sass --output-style compressed style.scss > style.css"
+  },
+  "author": "Nathan Kleekamp",
+  "license": "GPLv2 (or later)",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

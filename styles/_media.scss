@@ -16,5 +16,7 @@ object {
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
+  font-size: 0;
 	display: inline-block;
+  max-width: 110px;
 }

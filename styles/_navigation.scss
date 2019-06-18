@@ -43,10 +43,17 @@ $header-height: 60px;
 
 .site-branding {
   margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
 .site-title {
   margin: 0;
+
+  .site-title-text {
+    @extend %visuallyhidden;
+    margin: 0;
+  }
 }
 
 .main-navigation {
@@ -109,6 +116,11 @@ $header-height: 60px;
 
   .menu-toggle-text {
     @extend %visuallyhidden;
+  }
+
+  .menu-toggle-icon {
+    position: relative;
+    bottom: 2px;
   }
 }
 

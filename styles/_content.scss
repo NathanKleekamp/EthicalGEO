@@ -1,5 +1,14 @@
 .site-content {
   margin: 1em 1em 0;
+
+  @include bp($tablet) {
+    margin: em(50) auto;
+    width: 75%;
+
+    .home & {
+      text-align: center;
+    }
+  }
 }
 
 .sticky {

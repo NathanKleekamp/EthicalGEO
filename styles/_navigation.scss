@@ -28,7 +28,7 @@ a {
 # Menus
 --------------------------------------------------------------*/
 
-$header-height: 60px;
+$header-height: em(60);
 
 .site-header {
   align-content: center;
@@ -39,12 +39,22 @@ $header-height: 60px;
   justify-content: space-between;
   height: $header-height;
   padding: 0 1em;
+
+  @include bp($tablet) {
+    $header-height: em(100, 18);
+    height: $header-height;
+  }
+
 }
 
 .site-branding {
   margin-right: auto;
   display: flex;
   align-items: center;
+
+  @include bp($tablet) {
+    margin-left: 1em;
+  }
 }
 
 .site-title {
@@ -65,7 +75,7 @@ $header-height: 60px;
   z-index: 1000;
 
   .admin-bar & {
-    top: $header-height+46px;
+    top: $header-height + em(46);
   }
 
   ul {

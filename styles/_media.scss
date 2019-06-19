@@ -19,4 +19,8 @@ object {
   font-size: 0;
 	display: inline-block;
   max-width: 110px;
+
+  @include bp($tablet) {
+    max-width: 175px;
+  }
 }

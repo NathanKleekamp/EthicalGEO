@@ -11,15 +11,15 @@
 
 ?>
 
-	</div><!-- #content -->
+  </div><!-- #content -->
 
   <?php if ( is_active_sidebar( 'call-to-action' ) ) : ?>
     <?php dynamic_sidebar( 'call-to-action' ); ?>
   <?php endif; ?>
 
-	<footer id="colophon" class="site-footer">
+  <footer id="colophon" class="site-footer">
     <div class="bg-map"></div>
-		<div class="site-info">
+    <div class="site-info">
       <div class="ags-logo"></div>
       <div class="social-media-wrapper">
         <a class="footer-icon footer-icon-mail" id="mail-icon" href="mailto:mailto:info@ethicalgeo.org">
@@ -37,7 +37,7 @@
       </div>
       <p class="copyright">&copy;&nbsp;EthicalGEO. All Rights Reserved.</p>
     </div><!-- .site-info -->
-	</footer><!-- #colophon -->
+  </footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

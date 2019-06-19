@@ -41,10 +41,10 @@ $header-height: em(60);
   padding: 0 1em;
 
   @include bp($tablet) {
-    $header-height: em(100, 18);
-    height: $header-height;
+    align-items: flex-end;
+    height: auto;
+    padding: 1em 0;
   }
-
 }
 
 .site-branding {
@@ -67,15 +67,17 @@ $header-height: em(60);
 }
 
 .main-navigation {
+  $gte-tablet-sub-menu-width: 200px;
   background-color: $header-footer-bg-color;
-	display: block;
-  left: -9999px;
+  display: block;
+  left: em(-9999);
   position: absolute;
   top: $header-height;
   z-index: 1000;
 
   .admin-bar & {
-    top: $header-height + em(46);
+    $wp-admin-bar-height: em(46);
+    top: $header-height + $wp-admin-bar-height;
   }
 
   ul {
@@ -83,6 +85,24 @@ $header-height: em(60);
     list-style: none;
     margin: 0;
     padding-left: 0;
+
+    @include bp($tablet) {
+      display: block;
+
+      li:hover > ul,
+      li.focus > ul {
+        left: auto;
+
+        // Center sub-menus under parent
+        right: calc(50% - #{$gte-tablet-sub-menu-width / 2});
+      }
+
+      // Align the sub-menu to the right of the screen when it's parent is the last li
+      li:last-child:hover > ul,
+      li:last-child.focus > ul {
+        right: 0;
+      }
+    }
   }
 
   a {
@@ -98,6 +118,11 @@ $header-height: em(60);
     &:active {
       color: $secondary-text-color;
     }
+
+    @include bp($tablet) {
+      border: 0;
+      display: inline;
+    }
   }
 
   > li:last-child a {
@@ -111,11 +136,60 @@ $header-height: em(60);
 
     ul {
       display: block;
+
+      @include bp($tablet) {
+        display: flex;
+      }
     }
   }
 
   .sub-menu a {
     padding-left: 2em;
+
+    @include bp($tablet) {
+      display: inline-block;
+      padding: 0.5em;
+      text-align: center;
+      width: $gte-tablet-sub-menu-width;
+    }
+  }
+
+  @include bp($tablet) {
+    display: flex;
+    flex-direction: row-reverse;
+    position: static;
+    width: 100%;
+
+    ul ul {
+      background-color: $header-footer-bg-color;
+      box-shadow: 0 3px 3px darken($header-footer-bg-color, 5);
+      position: absolute;
+      left: -999em;
+      z-index: 99999;
+
+      a {
+        width: $gte-tablet-sub-menu-width;
+      }
+
+      li {
+        display: block;
+      }
+
+      li:hover > ul,
+      li.focus > ul {
+        left: auto;
+      }
+    }
+
+    li {
+      display: inline-block;
+      position: relative;
+    }
+
+    ul ul ul {
+      left: -999em;
+      top: 0;
+    }
   }
 }
 
@@ -129,6 +203,10 @@ $header-height: em(60);
   font-size: 40px;
   padding: 0;
 
+  @include bp($tablet) {
+    display: none;
+  }
+
   .menu-toggle-text {
     @extend %visuallyhidden;
   }
@@ -140,32 +218,32 @@ $header-height: em(60);
 }
 
 @media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+  .menu-toggle {
+    display: none;
+  }
+  .main-navigation ul {
+    display: block;
+  }
 }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
+  margin: 0 0 1.5em;
+  overflow: hidden;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+  float: left;
+  width: 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+  float: right;
+  text-align: right;
+  width: 50%;
 }

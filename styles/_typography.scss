@@ -97,3 +97,27 @@ mark, ins {
 big {
   font-size: 125%;
 }
+
+a {
+  color: royalblue;
+
+  &:visited {
+    color: $emphasis-color;
+  }
+
+  &:hover,
+  &:active {
+    color: $emphasis-color;
+  }
+
+  &:focus {
+    color: $emphasis-color;
+    outline: thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+

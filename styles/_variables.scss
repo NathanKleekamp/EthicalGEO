@@ -8,8 +8,9 @@ $header-footer-border: 10px solid #ffffff;
 
 $primary-text-color: #385169;
 $secondary-text-color: #ffffff;
+$emphasis-color: rgba(125, 47, 93, 0.9);
 
-$cta-bg-color: rgba(125, 47, 93, 0.9);
+$cta-bg-color: $emphasis-color;
 $social-media-bg-color: rgba(195, 225, 237, 1);
 
 /*------------------------------------*\

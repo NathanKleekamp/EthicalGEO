@@ -8,15 +8,45 @@ textarea {
 	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
-	line-height: 1.5;
+	line-height: 1.4;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 
+h1 {
+  font-size: em(28);
+  margin: 0;
+}
+
+h2 {
+  font-size: em(22);
+  margin: 0.67em 0 0;
+}
+
+h3 {
+  font-size: em(20);
+  margin: 0.67em 0 0;
+}
+
+h4 {
+  font-size: em(18);
+  margin: 0.67em 0 0;
+}
+
+h5 {
+  font-size: 1em;
+  margin: 0.67em 0 0;
+}
+
+h6 {
+  font-size: 0.9em;
+  margin: 0.67em 0 0;
+}
+
 p {
-	margin-bottom: 1.5em;
+	margin:: 0 0 1.5em;
 }
 
 dfn, cite, em, i {

@@ -4,14 +4,16 @@
   "description": "The EthicalGEO Wordpress theme",
   "main": "index.js",
   "scripts": {
-    "build": "rm style.css && npm run sass",
+    "build": "rm style.css js/dist/script.js && npm run sass && npm run uglify",
     "sass": "node-sass --output-style compressed style.scss > style.css",
-    "watch:sass": "nodemon -e scss -x 'npm run sass'"
+    "watch:sass": "nodemon -e scss -x 'npm run sass'",
+    "uglify": "uglifyjs js/src/*.js -o js/dist/script.js"
   },
   "author": "Nathan Kleekamp",
   "license": "GPLv2 (or later)",
   "devDependencies": {
     "node-sass": "^4.12.0",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "uglify-js": "^3.6.0"
   }
 }

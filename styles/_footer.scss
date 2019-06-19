@@ -10,22 +10,52 @@
     color: #ffffff;
     display: flex;
     flex-direction: column;
+  }
 
-    .ags-logo {
-      background: url('assets/ags-logo-white-400x400.png') no-repeat center center;
-      background-size: 150px 150px;
-      display: block;
-      width: 150px;
-      height: 150px;
+  .ags-logo {
+    background: url('assets/ags-logo-white-400x400.png') no-repeat center center;
+    background-size: 150px 150px;
+    display: block;
+    width: 150px;
+    height: 150px;
+  }
+
+  .social-media-wrapper {
+    position: relative;
+    margin: 2em 0;
+  }
+
+  .icon-text {
+    @extend %visuallyhidden;
+  }
+
+  .footer-icon {
+    $squared: 40px;
+    background-color: $social-media-bg-color;
+    background-position: center center;
+    border-radius: 50%;
+    display: inline-block;
+    height: $squared;
+    position: relative;
+    width: $squared;
+
+    &:last-child {
+      margin-left: 0.4em;
     }
 
-    .social-media-wrapper {
-      margin: 2em 0;
+    svg {
+      position: absolute;
+      left: calc(50% - 12px);
+      top: calc(50% - 12px);
     }
+  }
 
-    p {
-      margin: 0;
-    }
+  .icon-path {
+    fill: $header-footer-bg-color;
+  }
+
+  .copyright {
+    margin: 0;
   }
 
   .bg-map {

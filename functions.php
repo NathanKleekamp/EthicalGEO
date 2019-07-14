@@ -172,3 +172,25 @@ if ( defined( 'JETPACK__VERSION' ) ) {
   require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Redirect non-admin users to home page
+ *
+ * This function is attached to the ‘admin_init’ action hook.
+ */
+function redirect_non_admin_users() {
+  if ( ! current_user_can( 'manage_options' ) && ('/wp-admin/admin-ajax.php' != $_SERVER['PHP_SELF']) ) {
+    wp_redirect( home_url() );
+    exit;
+  }
+}
+add_action( 'admin_init', 'redirect_non_admin_users' );
+
+/**
+ * Only show admin bar to admins
+ */
+function remove_admin_bar() {
+  if (!current_user_can('administrator') && !is_admin()) {
+    show_admin_bar(false);
+  }
+}
+add_action('after_setup_theme', 'remove_admin_bar');

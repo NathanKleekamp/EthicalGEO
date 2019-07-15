@@ -27,7 +27,15 @@
   <header id="masthead" class="site-header">
     <div class="site-branding">
       <?php
-      the_custom_logo();
+      if ( has_custom_logo() ) :
+        the_custom_logo();
+      else :
+        ?>
+        <a class="custom-logo-link custom-logo-link-default" href="/" rel="home">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/ethicalgeo-logo.png" alt="EthicalGeo logo">
+        </a>
+        <?php
+      endif;
       if ( is_front_page() && is_home() ) :
         ?>
         <h1 class="site-title"><a class="site-title-text" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

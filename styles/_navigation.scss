@@ -66,6 +66,7 @@ $header-height: em(60);
       li:hover > ul,
       li.focus > ul {
         left: auto;
+        padding-top: 1em;
 
         // Center sub-menus under parent
         right: calc(50% - #{$gte-tablet-sub-menu-width / 2});

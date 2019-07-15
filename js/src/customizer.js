@@ -8,6 +8,7 @@
 
 (function(window, $) {
   if (!window.wp) return;
+  if (!window.wp.customize) return;
 
 	// Site title and description.
 	wp.customize('blogname', function(value) {

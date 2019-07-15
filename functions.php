@@ -138,6 +138,7 @@ add_filter( 'widget_title','ethical_geo_hide_widget_title' );
 function ethical_geo_scripts() {
   wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap' );
   wp_enqueue_style( 'ethical_geo-style', get_stylesheet_uri() );
+  wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'ethical_geo-scripts', get_template_directory_uri() . '/js/dist/script.js', array(), '20191919', true );
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );

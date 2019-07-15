@@ -71,6 +71,10 @@ $header-height: em(60);
         right: calc(50% - #{$gte-tablet-sub-menu-width / 2});
       }
 
+      li:last-child a {
+        padding-right: 1em;
+      }
+
       // Align the sub-menu to the right of the screen when it's parent is the last li
       li:last-child:hover > ul,
       li:last-child.focus > ul {
@@ -96,6 +100,7 @@ $header-height: em(60);
     @include bp($tablet) {
       border: 0;
       display: inline;
+      padding: 0.5em 0 0.5em 0.75em;
     }
   }
 

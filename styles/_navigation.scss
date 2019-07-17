@@ -2,7 +2,7 @@
 # Menus
 --------------------------------------------------------------*/
 
-$header-height: em(60);
+$header-height: 60;
 
 .site-header {
   align-content: center;
@@ -11,7 +11,7 @@ $header-height: em(60);
   border-bottom: $header-footer-border;
   display: flex;
   justify-content: space-between;
-  height: $header-height;
+  height: em($header-height);
   padding: 0 1em;
 
   @include bp($tablet) {
@@ -46,12 +46,12 @@ $header-height: em(60);
   display: block;
   left: em(-9999);
   position: absolute;
-  top: $header-height;
+  top: em($header-height);
   z-index: 1000;
 
   .admin-bar & {
-    $wp-admin-bar-height: em(46);
-    top: $header-height + $wp-admin-bar-height;
+    $wp-admin-bar-height: 46;
+    top: em($header-height + $wp-admin-bar-height);
   }
 
   ul {

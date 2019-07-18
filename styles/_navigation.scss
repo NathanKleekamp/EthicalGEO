@@ -218,3 +218,17 @@ $header-height: 60;
   text-align: right;
   width: 50%;
 }
+
+.edit-profile {
+  display: none !important;
+}
+
+.logged-in {
+  & .site-login {
+    display: none !important;
+  }
+
+  & .edit-profile {
+    display: inline-block !important;
+  }
+}

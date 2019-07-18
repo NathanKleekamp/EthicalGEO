@@ -173,8 +173,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
   require get_template_directory() . '/inc/jetpack.php';
 }
 
-add_action('wp_logout','auto_redirect_after_logout');
-function auto_redirect_after_logout(){
+function ethical_geo_auto_redirect_after_logout(){
   wp_redirect( home_url() );
   exit();
 }
+add_action('wp_logout','ethical_geo_auto_redirect_after_logout');

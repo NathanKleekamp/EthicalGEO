@@ -226,6 +226,7 @@ $header-height: 60;
 .logged-in {
   & .site-login {
     display: none !important;
+    padding-right: 1em;
   }
 
   & .edit-profile {

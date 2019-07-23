@@ -72,8 +72,8 @@ $header-height: 60;
         right: calc(50% - #{$gte-tablet-sub-menu-width / 2});
       }
 
-      li:last-child a {
-        padding-right: 1em;
+      li:last-child:after {
+        margin-right: 1em;
       }
 
       // Align the sub-menu to the right of the screen when it's parent is the last li
@@ -234,5 +234,20 @@ $header-height: 60;
 
   & .edit-profile {
     display: inline-block !important;
+  }
+}
+
+.menu-item-has-children:after {
+  @include bp($tablet) {
+    $triangleSize: 5px;
+    border-left: $triangleSize solid transparent;
+    border-right: $triangleSize solid transparent;
+    border-top: $triangleSize solid $secondary-text-color;
+    content: "";
+    display: block;
+    float: right;
+    height: 0;
+    margin: 10px 0 0 5px;
+    width: 0;
   }
 }

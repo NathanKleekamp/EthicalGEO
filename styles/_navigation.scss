@@ -223,6 +223,10 @@ $header-height: 60;
   display: none !important;
 }
 
+.site-login {
+  margin-right: 1em;
+}
+
 .logged-in {
   & .site-login {
     display: none !important;

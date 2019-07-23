@@ -32,7 +32,13 @@
     menu.className += ' nav-menu';
   }
 
-  button.onclick = function() {
+  function onClickButton(event) {
+    event.stopPropagation();
+
+    if (event.currentTarget === body) {
+      return;
+    }
+
     if (-1 !== container.className.indexOf('toggled')) {
       hideMenu();
     } else {
@@ -40,9 +46,10 @@
       button.setAttribute('aria-expanded', 'true');
       menu.setAttribute('aria-expanded', 'true');
     }
-  };
+  }
 
-  body.addEventListener('click', hideMenu, true);
+  button.addEventListener('click', onClickButton);
+  body.addEventListener('click', hideMenu);
 
   // Get all the link elements within the menu.
   links = menu.getElementsByTagName('a');
@@ -53,10 +60,10 @@
     links[i].addEventListener('blur', toggleFocus, true);
   }
 
-  function hideMenu() {
-      container.className = container.className.replace(' toggled', '');
-      button.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-expanded', 'false');
+  function hideMenu(event) {
+    container.className = container.className.replace(' toggled', '');
+    button.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-expanded', 'false');
   }
 
   /**

@@ -233,7 +233,11 @@ $header-height: 60;
   }
 
   & .edit-profile {
-    display: inline-block !important;
+    display: block !important;
+
+    @include bp($tablet) {
+      display: inline-block !important;
+    }
   }
 }
 

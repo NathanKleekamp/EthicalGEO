@@ -172,3 +172,17 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
   require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Video contest registration / login prompt.
+ * IMPORTANT: Delete if Video Contest plugin is removed
+ */
+function ethical_geo_registration_prompt( $attrs ) {
+  $a = shortcode_atts( array(
+    'registration_link' => '/wp-login.php?action=register',
+    'login_link' => '/wp-login.php',
+  ), $attrs );
+  return '<a href="' . $a['registration_link'] . '">Register</a> | <a href="' . $a['login_link'] . '">Login</a>';
+}
+
+ add_shortcode( 'eg_registration', 'ethical_geo_registration_prompt');

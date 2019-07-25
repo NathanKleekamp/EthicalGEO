@@ -185,4 +185,21 @@ function ethical_geo_registration_prompt( $attrs ) {
   return '<a href="' . $a['registration_link'] . '">Register</a> | <a href="' . $a['login_link'] . '">Login</a>';
 }
 
- add_shortcode( 'eg_registration', 'ethical_geo_registration_prompt');
+add_shortcode( 'eg_registration', 'ethical_geo_registration_prompt');
+
+function ethical_geo_dynamic_menu_items( $menu_items ) {
+  if(is_user_logged_in()) {
+    $username = wp_get_current_user()->user_login;
+    $first_name = wp_get_current_user()->user_firstname;
+    $display_name = $first_name ? $first_name : $username;
+
+    foreach ( $menu_items as $menu_item ) {
+      if ( strpos($menu_item->title, '##profile_name##') !== false) {
+        $menu_item->title = str_replace("##profile_name##",  "Welcome, " . $display_name, $menu_item->title);
+      }
+    }
+  }
+
+  return $menu_items;
+}
+add_filter( 'wp_nav_menu_objects', 'ethical_geo_dynamic_menu_items' );

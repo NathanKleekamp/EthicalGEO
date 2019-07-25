@@ -17,7 +17,7 @@ $header-height: 60;
   @include bp($tablet) {
     align-items: flex-end;
     height: auto;
-    padding: 1em 0;
+    padding: 1em 1em;
   }
 }
 
@@ -25,10 +25,6 @@ $header-height: 60;
   margin-right: auto;
   display: flex;
   align-items: center;
-
-  @include bp($tablet) {
-    margin-left: 1em;
-  }
 }
 
 .site-title {
@@ -70,10 +66,6 @@ $header-height: 60;
 
         // Center sub-menus under parent
         right: calc(50% - #{$gte-tablet-sub-menu-width / 2});
-      }
-
-      li:last-child:after {
-        margin-right: 1em;
       }
 
       // Align the sub-menu to the right of the screen when it's parent is the last li
@@ -219,24 +211,16 @@ $header-height: 60;
   width: 50%;
 }
 
-.edit-profile {
+.visible-when-logged-in {
   display: none !important;
 }
 
-.site-login {
-  margin-right: 1em;
-}
-
 .logged-in {
-  & .site-login {
+  & .invisible-when-logged-in {
     display: none !important;
-
-    a {
-      padding-right: 1em;
-    }
   }
 
-  & .edit-profile {
+  & .visible-when-logged-in {
     display: block !important;
 
     @include bp($tablet) {
@@ -258,4 +242,9 @@ $header-height: 60;
     margin: 10px 0 0 5px;
     width: 0;
   }
+}
+
+.nav-placeholder > a {
+  color: $secondary-text-color;
+  cursor: default;
 }

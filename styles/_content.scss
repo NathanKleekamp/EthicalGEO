@@ -1,5 +1,6 @@
 .site-content {
   margin: 1em 1em 0;
+  flex-grow: 1;
 
   @include bp($tablet) {
     margin: em(50) auto;

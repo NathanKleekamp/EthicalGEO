@@ -15,3 +15,32 @@
   padding: 1em 0.5em;
   text-align: center;
 }
+
+.eg-press-container {
+  color: $secondary-text-color;
+  background-color: $primary-text-color;
+
+  h2 {
+    font-size: 18px;
+    margin: 0 0 1em;
+  }
+
+  a {
+    color: $secondary-text-color;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .eg-press {
+    margin: 1em 1em;
+
+    @include bp($tablet) {
+      margin: em(25) auto;
+      width: 75%;
+    }
+  }
+}

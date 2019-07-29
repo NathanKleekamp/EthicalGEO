@@ -13,16 +13,29 @@
 
   </div><!-- #content -->
 
-  <?php if ( is_active_sidebar( 'call-to-action' ) ) : ?>
-    <?php dynamic_sidebar( 'call-to-action' ); ?>
-  <?php endif; ?>
+  <?php
+  if ( is_front_page() && is_active_sidebar( 'eg-press' ) ) :
+    ?><div class="eg-press-container bordered-top"><?php
+    dynamic_sidebar( 'eg-press' );
+    ?></div><?php
+  endif;
 
-  <footer id="colophon" class="site-footer">
+  if ( is_active_sidebar( 'call-to-action' ) ) :
+    dynamic_sidebar( 'call-to-action' );
+  endif;
+  ?>
+
+  <footer id="colophon" class="site-footer bordered-top">
     <div class="bg-map"></div>
     <div class="site-info">
+      <p>Follow <a href="https://twitter.com/EthicalGeo">@EthicalGeo</a> on Twitter &amp; Share Your Ideas with <a href="https://twitter.com/hashtag/EthicalGEO?src=hash">#EthicalGEO</a></p>
+      <div class="eg-sponsors">
+        <p>Thanks to our sponsor - <a href="https://www.omidyar.com/">Omidyar Network</a></p>
+        <p><a href="mailto:info@ethicalgeo.org">Contact Us</a> to become a sponsor of EthicalGeo.</p>
+      </div>
       <div class="ags-logo"></div>
       <div class="social-media-wrapper">
-        <a class="footer-icon footer-icon-mail" id="mail-icon" href="mailto:mailto:info@ethicalgeo.org">
+        <a class="footer-icon footer-icon-mail" id="mail-icon" href="mailto:info@ethicalgeo.org">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path class="icon-path" d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
           </svg>

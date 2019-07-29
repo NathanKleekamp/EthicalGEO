@@ -12,8 +12,13 @@
                     url('assets/dots-tile.jpg');
   color: $secondary-text-color;
   font-size: 1.5em;
+  font-weight: bold;
   padding: 1em 0.5em;
   text-align: center;
+
+  a {
+    color: $secondary-text-color;
+  }
 }
 
 .eg-press-container {

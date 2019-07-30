@@ -8,8 +8,10 @@
 
     .home & {
       text-align: center;
-      margin: auto;
+      margin: 0;
       width: auto;
+      background: url('assets/eg-front-bg-transparent.png') no-repeat center center;
+      background-size: cover;
     }
   }
 }
@@ -56,7 +58,9 @@
   @include bp($tablet) {
     display: flex;
     flex-direction: row;
-    margin: 1em;
+    justify-content: center;
+    margin: 1em auto;
+    width: 85%;
   }
 }
 
@@ -84,6 +88,15 @@
   padding: 1em;
 
   p:last-child {
+    margin: 0;
+  }
+}
+
+.eg-video-text {
+  background-color: $body-bg;
+  padding: 1em;
+
+  p {
     margin: 0;
   }
 }

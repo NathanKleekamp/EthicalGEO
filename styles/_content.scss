@@ -45,12 +45,6 @@
   border-top: $header-footer-border;
 }
 
-.justified {
-  @include bp($tablet) {
-    text-align: justify;
-  }
-}
-
 .eg-front-content-wrapper {
   display: flex;
   flex-direction: column-reverse;
@@ -65,6 +59,14 @@
 }
 
 .eg-front-column {
+  p {
+    text-align: left;
+  }
+
+  p:last-child {
+    margin: 0;
+  }
+
   @include bp($tablet) {
     margin-right: 2em;
   }
@@ -77,6 +79,7 @@
 .eg-front-column:last-child {
   @include bp($tablet) {
     margin-right: 0;
+    border: 10px solid transparent;
   }
 }
 
@@ -86,19 +89,11 @@
   color: $secondary-text-color;
   margin-bottom: 1em;
   padding: 1em;
-
-  p:last-child {
-    margin: 0;
-  }
 }
 
 .eg-video-text {
   background-color: $body-bg;
   padding: 1em;
-
-  p {
-    margin: 0;
-  }
 }
 
 .eg-video-wrapper {

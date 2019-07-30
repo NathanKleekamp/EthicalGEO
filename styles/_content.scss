@@ -8,6 +8,8 @@
 
     .home & {
       text-align: center;
+      margin: auto;
+      width: auto;
     }
   }
 }
@@ -39,4 +41,84 @@
 
 .bordered-top {
   border-top: $header-footer-border;
+}
+
+.justified {
+  @include bp($tablet) {
+    text-align: justify;
+  }
+}
+
+.eg-front-content-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include bp($tablet) {
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+  }
+}
+
+.eg-front-column {
+  @include bp($tablet) {
+    margin-right: 2em;
+  }
+
+  @include bp($laptop) {
+    width: 400px;
+  }
+}
+
+.eg-front-column:last-child {
+  @include bp($tablet) {
+    margin-right: 0;
+  }
+}
+
+.eg-intro-text {
+  background-color: $primary-text-color;
+  border: $header-footer-border;
+  color: $secondary-text-color;
+  margin-bottom: 1em;
+  padding: 1em;
+
+  p:last-child {
+    margin: 0;
+  }
+}
+
+.eg-video-wrapper {
+  height: 0;
+  margin-bottom: 1em;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+}
+
+.eg-youtube-vid {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+a.eg-btn {
+  color: $secondary-text-color;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 1em 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.eg-cta-btn {
+  background-color: $emphasis-color;
+}
+
+.eg-cta-btn-alt {
+  background-color: $primary-text-color;
 }

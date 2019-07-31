@@ -28,11 +28,11 @@
   <footer id="colophon" class="site-footer bordered-top">
     <div class="bg-map"></div>
     <div class="site-info">
-      <p>Follow <a href="https://twitter.com/EthicalGeo">@EthicalGeo</a> on Twitter &amp; Share Your Ideas with <a href="https://twitter.com/hashtag/EthicalGEO?src=hash">#EthicalGEO</a></p>
-      <div class="eg-sponsors">
-        <p>Thanks to our sponsor - <a href="https://www.omidyar.com/">Omidyar Network</a></p>
-        <p><a href="mailto:info@ethicalgeo.org">Contact Us</a> to become a sponsor of EthicalGeo.</p>
-      </div>
+      <?php
+      if ( is_active_sidebar( 'eg-footer' ) ) :
+        dynamic_sidebar( 'eg-footer' );
+      endif;
+      ?>
       <div class="ags-logo"></div>
       <div class="social-media-wrapper">
         <a class="footer-icon footer-icon-mail" id="mail-icon" href="mailto:info@ethicalgeo.org">

@@ -120,7 +120,7 @@ function ethical_geo_call_to_action_init() {
   register_sidebar( array(
     'name'          => esc_html__( 'Call to Action', 'ethical_geo' ),
     'id'            => 'call-to-action',
-    'description'   => esc_html__( 'Add text widget here.', 'ethical_geo' ),
+    'description'   => esc_html__( 'Add custom html widget here.', 'ethical_geo' ),
     'before_widget' => '<div class="cta bordered-top">',
     'after_widget'  => '</div>',
   ) );
@@ -131,12 +131,23 @@ function ethical_geo_press() {
   register_sidebar( array(
     'name'          => esc_html__( 'Press Widget', 'ethical_geo' ),
     'id'            => 'eg-press',
-    'description'   => esc_html__( 'Add text widget here.', 'ethical_geo' ),
+    'description'   => esc_html__( 'Add custom html widget here.', 'ethical_geo' ),
     'before_widget' => '<div class="eg-press">',
     'after_widget'  => '</div>',
   ) );
 }
 add_action( 'widgets_init', 'ethical_geo_press' );
+
+function ethical_geo_footer() {
+  register_sidebar( array(
+    'name'          => esc_html__( 'Footer Widget', 'ethical_geo'),
+    'id'            => 'eg-footer',
+    'description'   => esc_html__( 'Add custom html widget here.', 'ethical_geo' ),
+    'before_widget' => '<div class="eg-footer-wrapper">',
+    'after_widget'  => '</div>',
+  ) );
+}
+add_action( 'widgets_init', 'ethical_geo_footer' );
 
 /**
  * Enqueue scripts and styles.

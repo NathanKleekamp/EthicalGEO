@@ -209,3 +209,9 @@ function ethical_geo_dynamic_menu_items( $menu_items ) {
   return $menu_items;
 }
 add_filter( 'wp_nav_menu_objects', 'ethical_geo_dynamic_menu_items' );
+
+function wppbc_send_credentials_checkbox($requestdata, $form){
+   return '<li class="wppb-form-field wppb-send-credentials-checkbox"><label for="send_credentials_via_email"><input id="send_credentials_via_email" type="checkbox" name="send_credentials_via_email" value="sending"'.( ( isset( $request_data['send_credentials_via_email'] ) && ( $request_data['send_credentials_via_email'] == 'sending' ) ) ? ' checked' : '' ).'/>'.
+   __( 'Send me my username and password via email.', 'profilebuilder').'</label></li>';
+}
+add_filter('wppb_send_credentials_checkbox_logic', 'wppbc_send_credentials_checkbox', 10, 2);

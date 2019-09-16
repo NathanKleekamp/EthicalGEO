@@ -1,0 +1,9 @@
+{
+    "name": "nathankleekamp/ethical_geo",
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "v1.0.21"
+    }
+}

@@ -149,6 +149,17 @@ function ethical_geo_footer() {
 }
 add_action( 'widgets_init', 'ethical_geo_footer' );
 
+function ethical_geo_posts_page_intro() {
+  register_sidebar( array(
+    'name'          => esc_html__( 'Posts Page Intro', 'ethical_geo' ),
+    'id'            => 'eg-posts-page-intro',
+    'description'   => esc_html__( 'Add custom html widget here.', 'ethical_geo' ),
+    'before_widget' => '<div class="eg-posts-page-intro-wrapper">',
+    'after_widget'  => '</div>',
+  ) );
+}
+add_action( 'widgets_init', 'ethical_geo_posts_page_intro');
+
 /**
  * Enqueue scripts and styles.
  */

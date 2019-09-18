@@ -79,6 +79,8 @@ if ( ! function_exists( 'ethical_geo_setup' ) ) :
       'flex-width'  => true,
       'flex-height' => true,
     ) );
+
+    add_theme_support( 'responsive-embeds' );
   }
 endif;
 add_action( 'after_setup_theme', 'ethical_geo_setup' );
@@ -237,3 +239,26 @@ function wppbc_send_credentials_checkbox($requestdata, $form){
    __( 'Send me my username and password via email.', 'profilebuilder').'</label></li>';
 }
 add_filter('wppb_send_credentials_checkbox_logic', 'wppbc_send_credentials_checkbox', 10, 2);
+
+function ethical_geo_excerpt( $more ) {
+  return esc_html( ' ...', 'ethical_geo' );
+}
+add_filter( 'excerpt_more', 'ethical_geo_excerpt' );
+
+function ethical_geo_read_more_link( $excerpt ) {
+  $post = get_post();
+  $excerpt .= '<a href="' . get_permalink( $post->ID ) . '">' . esc_html__( 'Read More...', 'ethical_geo' ) . '</a>';
+  return $excerpt;
+}
+add_filter( 'the_excerpt', 'ethical_geo_read_more_link' );
+
+function ethical_geo_search_form( $form ) {
+  $uuid = wp_generate_uuid4();
+  $form  = '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">';
+  $form .= '<label class="screen-reader-text" for="' . $uuid . '">' . esc_html__( 'Search for:', 'ethical_geo' ) . '</label>';
+  $form .= '<input id="' . $uuid . '" type="search" class="search-field" placeholder="' . esc_html__('Search', 'ethical_geo') . '" value="' . get_search_query() . '" name="s">';
+  $form .= '<button>' . esc_html__('Search', 'ethical_geo') . '</button>';
+  $form .= '</form>';
+  return $form;
+}
+add_filter( 'get_search_form', 'ethical_geo_search_form' );

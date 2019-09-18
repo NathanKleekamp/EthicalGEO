@@ -1,0 +1,40 @@
+.eg-newsletter-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.eg-newsletter-title {
+  margin: 0 0 16px;
+}
+
+.eg-newsletter-form-wrapper {
+  display: flex;
+
+  @include bp($laptop) {
+    flex-wrap: wrap;
+  }
+
+  @include bp($desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.eg-newsletter-email {
+  flex-grow: 1;
+  margin-right: 1em;
+
+  @include bp($laptop) {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  @include bp($desktop) {
+    margin-right: 1em;
+  }
+}
+
+.eg-newsletter-button {
+  flex-shrink: 0;
+}

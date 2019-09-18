@@ -1,6 +1,27 @@
 .widget {
   margin: 0 0 1.5em;
   /* Make sure select elements fit in widgets. */
+
+  .eg-sidebar-primary & {
+    background-color: $header-footer-bg-color;
+    border: $header-footer-border;
+    color: $secondary-text-color;
+    padding: 2em;
+
+    @include bp($laptop) {
+      padding: 10px;
+    }
+
+    @include bp($desktop) {
+      padding: 1em;
+    }
+  }
+}
+
+.widget-title {
+  .eg-sidebar-primary & {
+    margin: 0 0 16px;
+  }
 }
 
 .widget select {

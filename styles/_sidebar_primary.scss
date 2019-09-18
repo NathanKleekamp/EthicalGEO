@@ -1,0 +1,14 @@
+.eg-sidebar-primary {
+  display: flex;
+  flex-direction: column;
+
+  @include bp($laptop) {
+    width: calc(40% - 3em);
+    margin-left: 3em;
+  }
+
+  @include bp($desktop) {
+    width: calc(35% - 3em);
+    margin-left: 3em;
+  }
+}

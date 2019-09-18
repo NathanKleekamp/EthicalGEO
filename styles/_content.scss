@@ -13,6 +13,65 @@
       background: url('assets/eg-front-bg-transparent.png') no-repeat center center;
       background-size: cover;
     }
+    .blog &, .single-post & {
+      margin-bottom: 3.125em;
+    }
+  }
+}
+
+.content-area {
+  @include bp($laptop) {
+    .blog &, .single-post & {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.site-main {
+  @include bp($laptop) {
+    .blog &, .single-post & {
+      width: 60%;
+    }
+  }
+  @include bp($desktop) {
+
+    .blog &, .single-post & {
+      width: 60%;
+    }
+  }
+}
+
+.post {
+  .blog & {
+    margin: 3em 0;
+  }
+}
+
+.entry-header {
+  .blog &, .single-post & {
+    align-items: flex-start;
+    display: flex;
+    margin-bottom: 16px;
+  }
+}
+
+.eg-author-gravitar {
+  .blog & {
+    border: 5px solid white;
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-right: 16px;
+  }
+}
+
+.entry-title {
+  .home & {
+    @extend %visuallyhidden;
+  }
+
+  .blog & {
+    margin: 0;
   }
 }
 
@@ -35,7 +94,6 @@
 }
 
 .home {
-  .entry-title,
   .page-title {
     @extend %visuallyhidden;
   }

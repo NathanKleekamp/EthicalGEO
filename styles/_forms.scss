@@ -11,6 +11,10 @@ input[type="submit"] {
   font-size: 0.75rem;
   line-height: 1;
   padding: .6em 1em .4em;
+
+  .eg-sidebar-primary  & {
+    height: 26px;
+  }
 }
 
 button:hover,
@@ -77,4 +81,49 @@ select {
 
 textarea {
   width: 100%;
+}
+
+label {
+  .eg-sidebar-primary .search-form & {
+    display: flex;
+
+    @include bp($laptop) {
+      flex-wrap: wrap;
+    }
+
+    @include bp($desktop) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.search-form {
+  .eg-sidebar-primary & {
+    display: flex;
+
+    @include bp($laptop) {
+      flex-wrap: wrap;
+    }
+
+    @include bp($desktop) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.search-field {
+  .eg-sidebar-primary .search-form & {
+    flex-grow: 1;
+    margin-right: 1em;
+
+    @include bp($laptop) {
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+
+    @include bp($desktop) {
+      margin-right: 1em;
+    }
+  }
 }

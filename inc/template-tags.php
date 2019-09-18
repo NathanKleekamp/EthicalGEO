@@ -40,10 +40,13 @@ if ( ! function_exists( 'ethical_geo_posted_by' ) ) :
    * Prints HTML with meta information for the current author.
    */
   function ethical_geo_posted_by() {
+    $fname = esc_html( get_the_author_meta( 'first_name' ) );
+    $lname = esc_html( get_the_author_meta( 'last_name' ) );
+    $full_name = trim( "$fname $lname" );
     $byline = sprintf(
       /* translators: %s: post author. */
       esc_html_x( 'by %s', 'post author', 'ethical_geo' ),
-      '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+      '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( $full_name ) . '</a></span>'
     );
 
     echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.

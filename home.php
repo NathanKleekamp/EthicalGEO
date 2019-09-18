@@ -25,13 +25,15 @@ get_header();
         ?>
         <header>
           <h1 class="page-title"><?php single_post_title(); ?></h1>
+          <?php
+          if ( is_active_sidebar( 'eg-posts-page-intro' ) ) :
+            dynamic_sidebar( 'eg-posts-page-intro' );
+          endif;
+          ?>
         </header>
 
         <?php
 
-        if ( is_active_sidebar( 'eg-posts-page-intro' ) ) :
-          dynamic_sidebar( 'eg-posts-page-intro' );
-        endif;
       endif;
 
       /* Start the Loop */
@@ -57,8 +59,10 @@ get_header();
     ?>
 
     </main><!-- #main -->
+    <?php
+    get_sidebar();
+    ?>
   </div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

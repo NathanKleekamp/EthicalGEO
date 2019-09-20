@@ -26,12 +26,23 @@ if ( ! function_exists( 'ethical_geo_posted_on' ) ) :
 
     $posted_on = sprintf(
       /* translators: %s: post date. */
-      esc_html_x( 'Posted on %s', 'post date', 'ethical_geo' ),
-      '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+      esc_html_x( '%s', 'post date', 'ethical_geo' ),
+      $time_string
     );
 
     echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
+  }
+endif;
+
+if ( ! function_exists( 'ethical_geo_author_gravitar_thumb' ) ) :
+  function ethical_geo_author_gravitar_thumb() {
+    $author_id = get_the_author_meta( 'user_email' );
+    $src = esc_url( get_avatar_url( $author_id ) );
+
+    if ( $author_id && ! is_singular() ) :
+      echo '<img class="eg-author-gravitar" src="' . $src . '" alt="The author\'s gravitar image" />';
+    endif;
   }
 endif;
 

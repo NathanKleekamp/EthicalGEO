@@ -12,19 +12,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
-    <?php $author_id = get_the_author_meta( 'user_email' );
-    if ( $author_id && ! is_singular() ) :?>
-    <img class="eg-author-gravitar" src="<?php echo esc_url( get_avatar_url( $author_id ) ); ?>" />
-    <?php
-    endif;
-
-    ?>
+    <?php ethical_geo_author_gravitar_thumb(); ?>
     <div class="eg-title-author-wrapper">
       <?php
       the_title( '<h2 class="entry-title">', '</h2>' );
       ?>
       <div class="entry-meta">
-        <?php ethical_geo_posted_by(); ?>
+        <p><?php ethical_geo_posted_by(); ?><br><?php ethical_geo_posted_on();?></p>
       </div><!-- .entry-meta -->
     </div><!-- .eg-title-author-wrapper -->
   </header><!-- .entry-header -->

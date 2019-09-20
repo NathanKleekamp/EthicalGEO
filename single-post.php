@@ -19,7 +19,10 @@ get_header();
 
       get_template_part( 'template-parts/content', get_post_type() );
 
-      the_post_navigation();
+      the_post_navigation(array (
+        'prev_text' => __( 'Previous Post' ),
+        'next_text' => __( 'Next Post' ),
+      ) );
 
       if ( comments_open() || get_comments_number() ) :
         comments_template();

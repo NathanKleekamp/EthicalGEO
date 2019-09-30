@@ -99,7 +99,8 @@ big {
 }
 
 a {
-  color: royalblue;
+  $link-color: royalblue;
+  color: $link-color;
 
   &:visited {
     color: $emphasis-color;
@@ -118,6 +119,18 @@ a {
   &:hover,
   &:active {
     outline: 0;
+  }
+
+  .blog .entry-title & {
+    color: $primary-text-color;
+    text-decoration: none;
+  }
+
+  .blog .entry-title &:hover,
+  .blog .entry-title &:active,
+  .blog .entry-title &:focus {
+    color: $link-color;
+    text-decoration: underline;
   }
 }
 

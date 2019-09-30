@@ -15,7 +15,11 @@
     <?php ethical_geo_author_gravitar_thumb(); ?>
     <div class="eg-title-author-wrapper">
       <?php
-      the_title( '<h2 class="entry-title">', '</h2>' );
+      if ( ! is_singular() ) :
+        the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+      else :
+        the_title( '<h2 class="entry-title">', '</h2>' );
+      endif;
       ?>
       <div class="entry-meta">
         <p><?php ethical_geo_posted_by(); ?><br><?php ethical_geo_posted_on();?></p>
